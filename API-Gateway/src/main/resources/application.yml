@@ -1,4 +1,3 @@
-
 server:
   port: 9090
 
@@ -15,12 +14,12 @@ spring:
 
       routes:
         - id: user-service
-          uri: localhost:8081
+          uri: lb://USER-SERVICE
           predicates:
             - Path=/user/**
 
         - id: product-service
-          uri: localhost:8082
+          uri: lb://product-service
           predicates:
             - Path=/product/**
 eureka:
